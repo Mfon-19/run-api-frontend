@@ -1,0 +1,84 @@
+
+.run-container {
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #d3d3d3;
+    border: 2px solid rgb(161, 105, 105);
+    border-radius: 12px 12px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.run-title-container {
+    background-color: #a52a2a;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    margin: -20px -20px 10px -20px;
+}
+
+.run-title {
+    color: white;
+    margin: 0;
+}
+
+.run-time-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.run-started-on-container, .run-completed-on-container {
+    background-color: #98fb98;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.run-location-container {
+    background-color: #a52a2a;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.run-location {
+    color: white;
+    margin: 0;
+}
+
+.run-distance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #87ceeb;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.run-distance {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#run-miles {
+    display: inline-block;
+    font-size: 80px;
+}
+
+.run-ranking-container {
+    max-width: fit-content;
+    background-color: #32cd32;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.run-ranking {
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
