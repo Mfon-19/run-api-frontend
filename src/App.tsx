@@ -2,16 +2,9 @@ import React, { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { RunEntryForm } from "@/components/RunEntryForm"
 import RunGrid from "./components/RunGrid"
+import { handleAddRun, handleDeleteRun } from "./lib/actions"
 
 function App() {
-  const handleDeleteRun = () => {
-
-  }
-
-  const handleAddRun = () => {
-
-  }
-
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6">Run Tracker</h1>

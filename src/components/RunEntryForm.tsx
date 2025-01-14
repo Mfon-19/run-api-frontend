@@ -16,7 +16,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import {
@@ -24,6 +24,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 
 const formSchema = z.object({
   title: z.string().min(2, {
@@ -38,8 +39,8 @@ const formSchema = z.object({
   miles: z.number().positive({
     message: "Miles must be a positive number.",
   }),
-  location: z.string().min(2, {
-    message: "Location must be at least 2 characters.",
+  location: z.enum(["INDOOR", "OUTDOOR"], {
+    required_error: "Please select a location.",
   }),
 })
 
@@ -53,7 +54,7 @@ export function RunEntryForm({ onSubmit }: RunEntryFormProps) {
     defaultValues: {
       title: "",
       miles: 0,
-      location: "",
+      location: "INDOOR",
     },
   })
 
@@ -207,9 +208,17 @@ export function RunEntryForm({ onSubmit }: RunEntryFormProps) {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Location</FormLabel>
-              <FormControl>
-                <Input placeholder="Central Park, New York" {...field} />
-              </FormControl>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a location" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="INDOOR">Indoor</SelectItem>
+                  <SelectItem value="OUTDOOR">Outdoor</SelectItem>
+                </SelectContent>
+              </Select>
               <FormDescription>
                 Where did you run?
               </FormDescription>
